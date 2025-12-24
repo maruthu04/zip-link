@@ -1,129 +1,115 @@
-# ⚡ ZipLink
+# ⚡ ZipLink - Shorten URLs in a Zip
 
-<div align="center">
+![Next.js](https://img.shields.io/badge/Next.js-15.0-black?style=flat-square&logo=next.js)
+![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-3.0-38B2AC?style=flat-square&logo=tailwind-css)
+![MongoDB](https://img.shields.io/badge/MongoDB-Atlas-47A248?style=flat-square&logo=mongodb)
 
-![ZipLink Banner](https://via.placeholder.com/1200x400.png?text=ZipLink+Project+Preview)
->
+ZipLink is a modern, privacy-focused URL shortening infrastructure designed for speed and simplicity. It allows users to create custom short links, generate QR codes, and track real-time analytics without requiring any login.
 
-**The modern, privacy-focused URL shortening infrastructure.**
-
-[![Next.js](https://img.shields.io/badge/Next.js-14.0-black?style=for-the-badge&logo=next.js)](https://nextjs.org/)
-[![React](https://img.shields.io/badge/React-18-20232A?style=for-the-badge&logo=react)](https://reactjs.org/)
-[![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css)](https://tailwindcss.com/)
-[![MongoDB](https://img.shields.io/badge/MongoDB-4EA94B?style=for-the-badge&logo=mongodb)](https://www.mongodb.com/)
-[![License](https://img.shields.io/badge/License-MIT-blue?style=for-the-badge)](./LICENSE)
-
-[View Live Demo](https://your-demo-link.vercel.app) · [Report Bug](https://github.com/yourusername/ziplink/issues) · [Request Feature](https://github.com/maruthu04/zip-link/issues)
-
-</div>
-
----
-
-## 📋 Executive Summary
-
-**ZipLink** is a robust, full-stack URL shortening service engineered for performance and ease of use. It eliminates the friction of traditional link management tools by removing authentication barriers while maintaining enterprise-grade features like custom aliasing, and automated data hygiene.
-
-Built on the **Next.js 15 App Router**, ZipLink leverages Server-Side Rendering (SSR) and Server Actions to ensure lightning-fast redirects and SEO optimization.
+**[🚀 View Live Demo](https://zip-link-maruthu04.vercel.app)** · **[🐛 Report Bug](https://github.com/maruthu04/zip-link/issues)**
 
 ---
 
 ## 🌟 Key Features
 
-### 🚀 Core Functionality
-* **High-Performance Redirection:** Optimized routing logic ensures minimal latency during link resolution.
-* **Custom Aliasing:** Users can define branded URLs (e.g., `ziplink.io/campaign-2025`) for better click-through rates.
-* **Smart Validation:** Robust regex validation ensures only secure, properly formatted URLs are processed.
-
-### 📊 Analytics & Insights
-* **Public Dashboards:** Instant, token-free access to analytics for every shortened link.
-* **Detailed Metrics:**  Timestamp history.
-
-### 🛡️ Security & Maintenance
-* **QR Code Generation:** Integrated, on-the-fly QR code creation for physical marketing assets.
-* **Auto-Expiry (TTL):** Database optimization via MongoDB TTL indexes—links automatically expire after **7 days** to maintain hygiene and privacy.
-* **Rate Limiting:** (Ready for implementation) Architecture supports middleware-based rate limiting.
-
----
-
-## 🏗️ System Architecture
-
-ZipLink employs a modern serverless architecture to ensure scalability and reliability.
-
-
-
-* **Frontend:** Next.js (React) responsible for the UI, form handling, and data visualization.
-* **API Layer:** Next.js API Routes handle business logic (validation, shortening, alias checks).
-* **Database Layer:** MongoDB (Atlas) serves as the document store, managing URL mappings and click-stream data.
-* **Routing:** Dynamic route segments (`[shortId]`) handle the redirection logic.
+* **⚡ Instant Shortening:**
+    * Generate random short links (e.g., `ziplink.io/AbC12`) in milliseconds.
+    * Create **Custom Aliases** (e.g., `ziplink.io/my-brand`) for better branding.
+* **📊 Public Analytics:**
+    * No login required.
+    * "Open Link" button to test redirects instantly.
+* **📱 Integrated Tools:**
+    * One-click **QR Code Generation** for every link.
+    * Responsive design for mobile and desktop users.
+* **🛡️ Privacy & Hygiene:**
+    * **Auto-Expiry (TTL):** Links automatically self-destruct after 7 days to keep the database clean.
+    * Robust URL validation using Regex.
+* **🚀 High Performance:**
+    * Built on **Next.js 15** (App Router) for server-side rendering and speed.
+    * Styled with **Tailwind CSS** for a glassmorphism look.
 
 ---
 
 ## 🛠️ Tech Stack
 
-| Category | Technology | Description |
-| :--- | :--- | :--- |
-| **Framework** | Next.js 14 | App Router, Server Actions, API Routes |
-| **Language** | JavaScript (ES6+) | Modern syntax and async/await patterns |
-| **Styling** | Tailwind CSS | Utility-first CSS for responsive design |
-| **Database** | MongoDB | NoSQL document storage via **Mongoose** ODM |
-| **Icons** | Lucide React | Lightweight, consistent icon set |
+**Frontend:**
+* [Next.js 15](https://nextjs.org/) (React Framework)
+* [Tailwind CSS](https://tailwindcss.com/) (Styling)
+* [Lucide React](https://lucide.dev/) (Icons)
+
+**Backend:**
+* [Next.js Server Actions](https://nextjs.org/docs/app/building-your-application/data-fetching/server-actions-and-mutations) (API Logic)
+* [MongoDB](https://www.mongodb.com/) (Database)
+* [Mongoose](https://mongoosejs.com/) (ODM)
 
 ---
 
-## 🚀 Installation & Setup
+## 🚀 Getting Started
 
-Follow these instructions to set up the project locally for development or testing.
+Follow these steps to run the project locally.
 
 ### Prerequisites
-* **Node.js** v18.17.0 or higher
-* **npm** or **yarn**
-* A running **MongoDB** instance (Local or Atlas)
+* Node.js (v18 or higher)
+* MongoDB Atlas Account or Local Instance
 
-### Step 1: Clone the Repository
-```bash
-git clone [https://github.com/maruthu04/zip-link.git](https://github.com/maruthu04/zip-link.git)
-cd zip-link
-Step 2: Install Dependencies
-Bash
+### Installation
 
-npm install
-# or
-yarn install
-Step 3: Environment Configuration
-Create a .env.local file in the project root. You must define the following variables:
+1.  **Clone the repository**
+    ```bash
+    git clone [https://github.com/maruthu04/zip-link.git](https://github.com/maruthu04/zip-link.git)
+    cd zip-link
+    ```
 
-Code snippet
+2.  **Install dependencies**
+    ```bash
+    npm install
+    ```
 
-# Database Connection (Required)
-# Ensure you append the database name '/ziplink' at the end of the string
-MONGODB_URI=mongodb+srv://<username>:<password>@cluster0.example.net/ziplink
+3.  **Configure Environment Variables**
+    Create a `.env.local` file in the root directory and add the following:
 
-# App Base URL (Required)
-# Used for generating the full short URL in responses
-NEXT_PUBLIC_BASE_URL=http://localhost:3000
-Step 4: Run Development Server
-Bash
+    ```env
+    # Database Connection
+    MONGODB_URI=mongodb+srv://<username>:<password>@cluster0.example.net/ziplink
 
-npm run dev
-Access the application at http://localhost:3000.
+    # App Base URL (For generating full links)
+    NEXT_PUBLIC_BASE_URL=http://localhost:3000
+    ```
 
-🤝 Contributing
-We welcome contributions! Please follow these steps to contribute:
+4.  **Run the application**
+    ```bash
+    npm run dev
+    ```
 
-Fork the repository.
+    Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-Create a Feature Branch (git checkout -b feature/NewFeature).
+---
 
-Commit your changes (git commit -m 'Add NewFeature').
+## 📸 Screenshots
 
-Push to the branch (git push origin feature/NewFeature).
+| Dashboard View |
+|:---:|
+| <img src="public/images/screenshot.png" alt="ZipLink Dashboard" width="800"> |
 
-Open a Pull Request.
+---
 
-Please ensure your code follows the existing style guidelines and includes relevant tests.
+## 🤝 Contributing
 
-📄 License
-This project is licensed under the MIT License. See the LICENSE file for details.
+Contributions are what make the open source community such an amazing place to learn, inspire, and create. Any contributions you make are **greatly appreciated**.
+
+1.  Fork the Project
+2.  Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
+3.  Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
+4.  Push to the Branch (`git push origin feature/AmazingFeature`)
+5.  Open a Pull Request
+
+---
+
+## 📜 License
+
+Distributed under the MIT License. See `LICENSE` for more information.
+
+---
 
 
-Project Link: https://github.com/maruthu04/zip-link
+Project Link: [https://github.com/maruthu04/zip-link](https://github.com/maruthu04/zip-link)
