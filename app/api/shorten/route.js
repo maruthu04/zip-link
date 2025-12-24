@@ -7,32 +7,34 @@ export async function POST(req) {
   try {
     await connectDB();
     
-    const { url, alias } = await req.json();
+    const { url, alias, days } = await req.json();
 
     if (!url) {
       return NextResponse.json({ error: 'URL is required' }, { status: 400 });
     }
 
+    const expiryDays = days ? parseInt(days) : 7;
+    
+    const expiresAt = new Date(Date.now() + (expiryDays * 24 * 60 * 60 * 1000));
+
     let shortId;
 
+    
     if (alias) {
-      // Check if this alias is already taken in the database
       const existing = await Url.findOne({ shortId: alias });
-      
       if (existing) {
         return NextResponse.json({ error: 'Alias already taken! Try another.' }, { status: 409 });
       }
-      
-      // If free, use it!
       shortId = alias;
-      
     } else {
       shortId = nanoid(5);
     }
 
+    
     await Url.create({
       originalUrl: url,
       shortId,
+      expiresAt: expiresAt 
     });
 
     const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'http://localhost:3000';
