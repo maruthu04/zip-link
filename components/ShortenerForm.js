@@ -120,10 +120,10 @@ export default function ShortenerForm() {
               </div>
             )}
 
-            <button
+            <button 
               type="submit"
               disabled={isLoading}
-              className="w-full bg-slate-900 hover:bg-slate-800 text-white font-bold py-4 rounded-xl transition-all flex items-center justify-center gap-2 disabled:opacity-70 shadow-lg shadow-slate-200"
+              className="w-full bg-slate-900 hover:bg-slate-800 text-white font-bold py-4 rounded-xl transition-all flex items-center justify-center gap-2 disabled:opacity-70 shadow-lg shadow-slate-200 cursor-pointer"
             >
               {isLoading ? (
                 <>
